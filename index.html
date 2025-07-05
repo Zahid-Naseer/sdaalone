@@ -1,8 +1,1844 @@
-<html>
-<body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio – Nawaz Safdar</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+        
+
+        .service-card {
+            @apply p-8 rounded-xl bg-gray-800 hover:bg-gray-700 transition-all duration-300 border border-gray-700 hover:border-emerald-500/30;
+        }
+
+        .portfolio-item {
+            @apply cursor-pointer transform transition-transform duration-300 hover:scale-105;
+        }
+        .image-collage-fixed {
+  height: 285px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow: hidden;
+}
+
+.image-collage-fixed .top-image {
+  flex: 3;
+  overflow: hidden;
+}
+
+.image-collage-fixed .top-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+
+.image-collage-fixed .bottom-images {
+  flex: 2;
+  display: flex;
+  gap: 5px;
+  overflow: hidden;
+}
+
+.image-collage-fixed .bottom-images img {
+  flex: 1;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+  .skill-logo {
+    width: 80px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+  .skill-box {
+    text-align: center;
+  }
+  .highlighted-label {
+  color: #f0f0f0; /* Light color for visibility on dark bg */
+  font-weight: 500;
+  opacity: 0.85;  /* Slight softness without looking faded */
+}
+.image-row {
+  display: flex;
+  justify-content: space-between; /* Ensures space between images */
+  gap: 10px; /* Adjust space between images as needed */
+}
+
+.image-row img {
+  width: 32%; /* Make each image take up 1/3 of the row */
+  object-fit: cover; /* Ensures that images are not distorted */
+  height: 280px; /* Adjust based on your preferred height */
+}
+
+.portfolio-item {
+    transition: none !important;
+    margin-bottom: 20px; /* Add consistent spacing */
+  }
+  
+  /* Ensure proper container behavior */
+  .isotope-container {
+    overflow: hidden !important;
+  }
+  
+   /* GUARANTEED STYLES */
+.portfolio-video-container {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: #000;
+  cursor: pointer;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  height: 270px; /* Your fixed height */
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures full coverage without distortion */
+  object-position: center; /* Centers the image */
+  position: absolute; /* Takes it out of normal flow */
+  top: 0;
+  left: 0;
+}
+  
+  .video-play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .play-button i {
+    font-size: 3.5rem;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  
+  .video-iframe-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+   .fullscreen-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    .fullscreen-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Optional dark overlay */
+    .fullscreen-bg::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    
+ 
+ 
+    </style>
+
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/portfoliopic2copy.png" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Nawaz Safdar</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="https://www.youtube.com/channel/UCidP4dY9Zpjd3WD-HnELbsw" target="_blank" class="youtube"><i class="bi bi-youtube"></i></a>
+      <a href="https://www.instagram.com/sdaalone/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.pinterest.com/sdaalone07/" target="_blank" class="pinterest"><i class="bi bi-pinterest"></i></a>
+      <a href="https://www.linkedin.com/in/safdar-nawaz-ba3624140/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+     
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="main">
+
+   
+    <!-- Hero Section -->
+     <section id="hero" class="hero section">
+
+      <img src="assets/img/mainbg.jpg" alt="" data-aos="fade-in" class="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>Nawaz Safdar</h2>
+        <p>I'm 3D Artist</p>
+      </div>
+
+    </section><!-- /Hero Section -->
+    <!-- About Section -->
+
+     <div class="fullscreen-bg">
+    <img src="assets/img/652d5b3108104a54f2e33759a8cfcf3f.jpg" alt="Background">
+  </div>
+  
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>I am a qualified and professional Architectural Designer with seven years of experience in Architectural Design with Planning,
+          3D Modeling And 3D Visualisation.
+           Strong creative and analytical skills. Team player with an eye for detail.
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+  <div class="row gy-4 justify-content-center">
+    <div class="col-lg-4">
+      <img src="assets/img/portfoliopic2copy.png" class="img-fluid" alt="">
+    </div>
+    <div class="col-lg-8 content">
+      <h2>Architect &amp; 3D Artist.</h2>
+      <p class="fst-italic py-3">
+        I bring together practical detail and creative vision, with a strong interest in preserving architectural
+        heritage—reflected in my published research on heritage documentation using modern tools. 
+      </p>
+      <div class="row">
+        <div class="col-lg-6">
+          <ul>
+            <li><i class="bi bi-calendar-event"></i> <strong>Birthday:</strong> <span>1st Jan 1998</span></li>
+            <li><i class="bi bi-globe2"></i> <strong>Website:</strong> <span>www.sdaalone.com</span></li>
+            <li><i class="bi bi-telephone"></i> <strong>Phone:</strong> <span>+92 307 6834873</span></li>
+            <li><i class="bi bi-geo-alt"></i> <strong>City:</strong> <span>Multan, Punjab</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <ul>
+            <li><i class="bi bi-person-badge"></i> <strong>Age:</strong> <span>26</span></li>
+            <li><i class="bi bi-mortarboard"></i> <strong>Degree:</strong> <span>BSc Architectural Engineering</span></li>
+            <li><i class="bi bi-envelope"></i> <strong>Email:</strong> <span>sdaalone@gmail.com</span></li>
+            <li><i class="bi bi-briefcase"></i> <strong>Freelance:</strong> <span>Available</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </section><!-- /About Section -->
+
+    
+
+    <!-- Skills Section -->
+   <section id="skills" class="skills section">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Skills</h2>
+    <p>I bring technical precision and creative design together through these professional tools and platforms.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row text-center">
+
+      <!-- Skill Item -->
+     <div class="col-6 col-md-3 mb-4 skill-box">
+        <img src="assets/img/software logo icons/SketchUp.png" alt="SketchUp" class="skill-logo">
+        <p class="mt-2">SketchUp</p>
+      </div>
+
+      <div class="col-6 col-md-3 mb-4 skill-box">
+        <img src="assets/img/software logo icons/Autocad-Logo.png" alt="AutoCAD" class="skill-logo">
+        <p class="mt-2">AutoCAD</p>
+      </div>
+
+      <div class="col-6 col-md-3 mb-4 skill-box">
+        <img src="assets/img/software logo icons/revit.png" alt="Revit" class="skill-logo">
+        <p class="mt-2">Revit</p>
+      </div>
+
+      <div class="col-6 col-md-3 mb-4 skill-box">
+        <img src="assets/img/software logo icons/d5.png" alt="D5 Render" class="skill-logo">
+        <p class="mt-2">D5 Render</p>
+      </div>
+
+      <div class="col-6 col-md-3 mb-4 skill-box">
+        <img src="assets/img/software logo icons/LumiON.png" alt="LumiON" class="skill-logo">
+        <p class="mt-2">LumiON</p>
+      </div>
+
+      <div class="col-6 col-md-3 mb-4 skill-box">
+        <img src="assets/img/software logo icons/Autodesk 3DS Max.png" alt="Autodesk 3Ds Max" class="skill-logo">
+        <p class="mt-2">Autodesk 3Ds Max</p>
+      </div>
+
+      <div class="col-6 col-md-3 mb-4 skill-box">
+        <img src="assets/img/software logo icons/adobe-premiere-pro-logo-0-1.png" alt="Adobe Premiere Pro" class="skill-logo">
+        <p class="mt-2">Adobe Premiere Pro</p>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+    
+
+    <!-- Resume Section -->
+   <section id="resume" class="resume section">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Resume</h2>
+    <p>
+      I am a qualified and professional Architectural Designer with over 7 years of hands-on experience in architectural design, 2D drafting, 3D modeling, and high-quality visualization. 
+      I deliver both architectural and MEP design services using tools like AutoCAD, SketchUp, Revit, and D5 Render. 
+      With strong creative and analytical skills, I bridge technical precision with visual impact, ensuring detail-driven, regulation-compliant, and client-focused outcomes.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      
+      <!-- Left Column -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="resume-title">Summary</h3>
+          <div class="resume-item pb-0">
+            <h4><strong>Safdar Nawaz</strong></h4>
+            <p>
+              <em>
+                Passionate and detail-driven Architectural Designer with over 7 years of hands-on experience in architectural planning, MEP coordination, and 3D visualization.
+                Skilled in delivering both residential and commercial projects that combine creative aesthetics with functional precision.
+              </em>
+            </p>
+            <ul>
+              <li><i class="bi bi-geo-alt"></i> Adams Housing, Multan, Pakistan</li>
+              <li><i class="bi bi-phone"></i> +92 307 6834873</li>
+              <li><i class="bi bi-envelope"></i> sdaalone@gmail.com</li>
+            </ul>
+          </div>
+
+          <h3 class="resume-title">Education</h3>
+
+          <div class="resume-item">
+            <h4><strong>BSc – Building & Architectural Engineering</strong></h4>
+            <h5>2015 – 2019</h5>
+            <p><em>Bahauddin Zakariya University, Multan</em></p>
+            <p>Completed a comprehensive program covering architectural design, technical drafting, building services, and structural systems.</p>
+          </div>
+
+          <div class="resume-item">
+            <h4><strong>F.Sc – Pre-Engineering</strong></h4>
+            <h5>2013 – 2015</h5>
+            <p><em>Punjab Group of Colleges, Multan</em></p>
+            <p>Focused on physics, mathematics, and foundational engineering concepts.</p>
+          </div>
+
+          <div class="resume-item">
+            <h4><strong>Matriculation – Science Group</strong></h4>
+            <h5>2013</h5>
+            <p><em>Misali Rehbar School, Multan</em></p>
+            <p>Completed with distinction in science and mathematics.</p>
+          </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="resume-title">Professional Experience</h3>
+
+        <div class="resume-item">
+  <h4><strong>Architectural Designer</strong> –<span class="highlighted-label">DanDesign Interiors</span></h4>
+  <h5>2023 – Present | Abu Dhabi, UAE</h5>
+  <p>
+    Delivering high-end interior and architectural design solutions for residential and commercial spaces. 
+    Responsibilities include:
+  </p>
+  <ul>
+    <li>Conceptualizing layouts and design themes based on client briefs.</li>
+    <li>Creating precise 3D models and photorealistic renders for presentations.</li>
+    <li>Collaborating with international teams on site planning and design iterations.</li>
+  </ul>
+</div>
+
+<div class="resume-item">
+  <h4><strong>Architectural Designer</strong> – <span class="highlighted-label">The Workshop Living Concept & Design</span></h4>
+  <h5>2019 – 2023 | Multan, Pakistan</h5>
+  <p>
+    Played a key role in developing creative residential and interior projects from concept to visualization.
+  </p>
+  <ul>
+    <li>Produced architectural and interior working drawings aligned with building codes.</li>
+    <li>Designed 3D visualizations to showcase project aesthetics and function.</li>
+    <li>Worked closely with engineers to align technical and design needs.</li>
+  </ul>
+</div>
+
+<div class="resume-item">
+  <h4><strong>Junior Architectural Designer</strong> – <span class="highlighted-label">J. Architect & Consultants</span></h4>
+  <h5>2019 (1 Month) | Multan, Pakistan</h5>
+  <p>
+    Assisted senior architects in early-stage design and documentation tasks.
+  </p>
+  <ul>
+    <li>Supported creation of residential layouts and planning documents.</li>
+    <li>Helped with 2D drafting and presentation boards for client meetings.</li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+</section>
+
+
+    <!-- /Resume Section -->
+
+    <section id="portfolio" class="portfolio section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Portfolio</h2>
+    <p>A selection of architectural design projects with high-quality images and animation.</p>
+  </div>
+  <div class="container">
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+        <li data-filter="*" class="filter-active">All</li>
+        <li data-filter=".filter-interior">Residential</li>
+        <li data-filter=".filter-commercial">Commercial</li>
+        <li data-filter=".filter-video">Animation</li>
+      </ul>
+      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+ 
+ 
+        <!--Line 1-->
+
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-residential portfolio-card" style="display: block;">
+              <div class="portfolio-content h-100">
+                <div class="image-collage-fixed">
+                  <div class="top-image">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/Portfolio-pics/n%20new1%20re.jpg?updatedAt=1751272743434" loading="lazy" class="img-fluid" alt="Modern Commercial Design">
+                  </div>
+                  <div class="bottom-images">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/n%20new2%20re.jpg?updatedAt=1751397699870" loading="lazy" alt="Sub2" class="img-fluid small-img">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/n%20new1%20re.jpg?updatedAt=1751397699782" alt="Sub1" loading="lazy" class="img-fluid small-img">
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Modern House Facade</h4>
+                  <p>Modern House Facade Design.</p>
+
+                  <!-- Zoom icon + lightbox group -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/Portfolio-pics/n%20new1%20re.jpg?updatedAt=1751272743434"
+                    title="Main View"
+                    data-gallery="gallery-house"
+                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                  <!-- Hidden images for same lightbox -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/n%20new2%20re.jpg?updatedAt=1751397699870"
+                    class="glightbox d-none"
+                    data-gallery="gallery-house"
+                    title="Side View"></a>
+
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/n%20new1%20re.jpg?updatedAt=1751397699782"
+                    class="glightbox d-none"
+                    data-gallery="gallery-house"
+                    title="Back View"></a>
+
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+                    
+                      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-commercial portfolio-card" style="display: block;">
+              <div class="portfolio-content h-100">
+                <div class="image-collage-fixed">
+                  <div class="top-image">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/360withblack.jpg?updatedAt=1751398000818" loading="lazy" class="img-fluid" alt="Modern Commercial Design">
+                  </div>
+                  <div class="bottom-images">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/vr12_23-Photo.jpg?updatedAt=1751398000603" loading="lazy" alt="Sub1" class="img-fluid small-img">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/withredrenders_27-Photo.jpg?updatedAt=1751398000991" loading="lazy" alt="Sub2" class="img-fluid small-img">
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Modern Lounge Design</h4>
+                  <p>Modern Lounge Design with sustainable features.</p>
+
+                  <!-- Zoom icon + lightbox group -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/360withblack.jpg?updatedAt=1751398000818"
+                    title="Main View"
+                    data-gallery="gallery-lounge"
+                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                  <!-- Hidden images for same lightbox -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/vr12_23-Photo.jpg?updatedAt=1751398000603"
+                    class="glightbox d-none"
+                    data-gallery="gallery-lounge"
+                    title="Top View"></a>
+
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/withredrenders_27-Photo.jpg?updatedAt=1751398000991"
+                    class="glightbox d-none"
+                    data-gallery="gallery-lounge"
+                    title="Perspective View"></a>
+
+                  <a href="project_2.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+           <!-- YouTube Video Portfolio Item -->
+           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video portfolio-card" style="display: block;">
+              <div class="portfolio-content h-100">
+                <!-- Video Container with Custom Thumbnail System -->
+                <div class="portfolio-video-container" 
+                    data-video-id="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/penthouse%20short.mp4?updatedAt=1751537337830"
+                    data-custom-thumbnail="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/vr12_23-Photo.jpg?updatedAt=1751398000603">
+                  
+                  <!-- Custom Thumbnail (always shown first) -->
+                  <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/vr12_23-Photo.jpg?updatedAt=1751398000603" 
+                      alt="Project video preview" 
+                      class="video-thumbnail img-fluid"
+                      loading="lazy">
+                  
+                  <!-- Play button overlay -->
+                  <div class="video-play-overlay">
+                    <div class="play-button">
+                      <i style="margin-right:110px;" class="bi bi-play-circle-fill"></i>
+                    </div>
+                  </div>      
+                
+                  <!-- Video element container -->
+                  <div class="video-element-wrapper">
+                    <video controls style="display:none; width:100%;">
+                      <source src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/penthouse%20short.mp4?updatedAt=1751537337830" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+                
+                <!-- Portfolio Info -->
+                <div class="portfolio-info">
+                  <h4>Modern Lounge Design</h4>
+                  <p>3D animation walkthrough</p>
+                  <div class="portfolio-links">
+                    <a style="margin-left:40px; margin-top:7px;" href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/penthouse%20short.mp4?updatedAt=1751537337830" 
+                      title="Watch Video" 
+                      class="glightbox preview-link">
+                      <div class="video-play-overlay">
+                          <div class="play-button">
+                            <i class="bi bi-play-circle-fill"></i>
+                          </div>
+                        </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Line 2-->
+            
+           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-residential portfolio-card" style="display: block;">
+              <div class="portfolio-content h-100">
+                <div class="image-collage-fixed">
+                  <div class="top-image">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/villa%20design/house%201.jpg?updatedAt=1751441301093" loading="lazy" class="img-fluid" alt="Modern Commercial Design">
+                  </div>
+                  <div class="bottom-images">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/villa%20design/house%202.jpg?updatedAt=1751441301306" loading="lazy" alt="Sub1" class="img-fluid small-img">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/villa%20design/house%203.jpg?updatedAt=1751441301240" loading="lazy" alt="Sub2" class="img-fluid small-img">
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Villa Exterior Design</h4>
+                  <p>Villa Exterior Design with sustainable features.</p>
+
+                  <!-- Main zoom trigger -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/villa%20design/house%201.jpg?updatedAt=1751441301093"
+                    title="Villa - Front View"
+                    data-gallery="gallery-villa"
+                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                  <!-- Hidden images in same group -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/villa%20design/house%202.jpg?updatedAt=1751441301306"
+                    class="glightbox d-none"
+                    data-gallery="gallery-villa"
+                    title="Villa - Side View"></a>
+
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/villa%20design/house%203.jpg?updatedAt=1751441301240"
+                    class="glightbox d-none"
+                    data-gallery="gallery-villa"
+                    title="Villa - Top View"></a>
+
+                  <a href="project_3.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-commercial portfolio-card" style="display: block;">
+              <div class="portfolio-content h-100">
+                <div class="image-collage-fixed">
+                  <div class="top-image">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/appartment/renderviewslounge_61-Photo_61-Photo.jpg?updatedAt=1751441715609" loading="lazy" class="img-fluid" alt="Modern Commercial Design">
+                  </div>
+                  <div class="bottom-images">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/appartment/renderviewslounge_61-Photo_65-Photo.jpg?updatedAt=1751441715641" loading="lazy" alt="Sub1" class="img-fluid small-img">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/appartment/Screenshot2025-07-0120325.jpeg?updatedAt=1751441715852" loading="lazy" alt="Sub2" class="img-fluid small-img">
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Commercial Apartment</h4>
+                  <p>Commercial Apartment with sustainable features.</p>
+
+                  <!-- Main zoom trigger -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/appartment/renderviewslounge_61-Photo_61-Photo.jpg?updatedAt=1751441715609"
+                    title="Apartment - Main View"
+                    data-gallery="gallery-apartment"
+                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                  <!-- Hidden images in same group -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/appartment/renderviewslounge_61-Photo_65-Photo.jpg?updatedAt=1751441715641"
+                    class="glightbox d-none"
+                    data-gallery="gallery-apartment"
+                    title="Apartment - Alternate View"></a>
+
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/appartment/Screenshot2025-07-0120325.jpeg?updatedAt=1751441715852"
+                    class="glightbox d-none"
+                    data-gallery="gallery-apartment"
+                    title="Apartment - Interior"></a>
+
+                  <a href="project_4.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video portfolio-card" style="display: block;">
+              <div class="portfolio-content h-100">
+                <!-- Video Container with Custom Thumbnail System -->
+                <div class="portfolio-video-container" 
+                    data-video-id="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/for%20bed.mp4?updatedAt=1751537321760"
+                    data-custom-thumbnail="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/appartment/renderviewslounge_61-Photo_61-Photo.jpg?updatedAt=1751441715609">
+                  
+                  <!-- Custom Thumbnail (always shown first) -->
+                  <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/appartment/renderviewslounge_61-Photo_61-Photo.jpg?updatedAt=1751441715609" 
+                      alt="Project video preview" 
+                      class="video-thumbnail img-fluid"
+                      loading="lazy">
+                  
+                  <!-- Play button overlay -->
+                  <div class="video-play-overlay">
+                    <div class="play-button">
+                      <i style="margin-right:110px;" class="bi bi-play-circle-fill"></i>
+                    </div>
+                  </div>      
+                
+                  <!-- Video element container -->
+                  <div class="video-element-wrapper">
+                    <video controls style="display:none; width:100%;">
+                      <source src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/for%20bed.mp4?updatedAt=1751537321760" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+                
+                <!-- Portfolio Info -->
+                <div class="portfolio-info">
+                  <h4>Apartment Animation</h4>
+                  <p>3D animation walkthrough</p>
+                  <div class="portfolio-links">
+                    <a style="margin-left:40px; margin-top:7px;" href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/for%20bed.mp4?updatedAt=1751537321760" 
+                      title="Watch Video" 
+                      class="glightbox preview-link">
+                      <div class="video-play-overlay">
+                          <div class="play-button">
+                            <i class="bi bi-play-circle-fill"></i>
+                          </div>
+                        </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+
+            <!--Line 3--> 
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-commercial portfolio-card" style="display: block;">
+            <div class="portfolio-content h-100">
+              <div class="image-row">
+                <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/reception/receptionshort_99-Photo.jpg?updatedAt=1751442775691" loading="lazy" class="img-fluid" alt="Modern Bath Design">
+                <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/reception/receptionshort_94-Photo.jpg?updatedAt=1751442774049" loading="lazy" alt="Sub1" class="img-fluid">
+                <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/reception/receptionshort_91-Photo.jpg?updatedAt=1751442771279" loading="lazy" alt="Sub2" class="img-fluid">
+              </div>
+              <div class="portfolio-info">
+                <h4>Reception</h4>
+                <p>Reception of commercial building.</p>
+
+                <!-- Zoom icon + lightbox group -->
+                <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/reception/receptionshort_99-Photo.jpg?updatedAt=1751442775691"
+                  title="Reception Main"
+                  data-gallery="gallery-reception"
+                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                <!-- Hidden images -->
+                <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/reception/receptionshort_94-Photo.jpg?updatedAt=1751442774049"
+                  class="glightbox d-none"
+                  data-gallery="gallery-reception"
+                  title="Reception Angle 1"></a>
+
+                <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/reception/receptionshort_91-Photo.jpg?updatedAt=1751442771279"
+                  class="glightbox d-none"
+                  data-gallery="gallery-reception"
+                  title="Reception Angle 2"></a>
+
+                <a href="project_5.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+    
+            <!-- Interior Design -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-commercial portfolio-card" style="display: block;">
+                <div class="portfolio-content h-100">
+                  <div class="image-collage-fixed">
+                    <div class="top-image">
+                      <img src="https://ik.imagekit.io/d1qbp22xe/Portfolio-pics/1%20f%20render%20off_1%20-%20Photo.webp?updatedAt=1751223486173" loading="lazy" class="img-fluid" alt="Modern Commercial Design">
+                    </div>
+                    <div class="bottom-images">
+                      <img src="https://ik.imagekit.io/d1qbp22xe/Portfolio-pics/1%20f%20render%20off_2%20-%20Photo.webp?tr=w-500" loading="lazy" alt="Sub1" class="img-fluid small-img">
+                      <img src="https://ik.imagekit.io/d1qbp22xe/Portfolio-pics/1%20f%20render%20off_3%20-%20Photo.webp??tr=w-500" loading="lazy" alt="Sub2" class="img-fluid small-img">
+                    </div>
+                  </div>
+                  <div class="portfolio-info">
+                    <h4>Manager Office</h4>
+                    <p>Manager Office with sustainable features.</p>
+
+                    <!-- Zoom icon + lightbox group -->
+                    <a href="https://ik.imagekit.io/d1qbp22xe/Portfolio-pics/1%20f%20render%20off_1%20-%20Photo.webp?updatedAt=1751223486173"
+                      title="Manager Office Main"
+                      data-gallery="gallery-office"
+                      class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                    <!-- Hidden images -->
+                    <a href="https://ik.imagekit.io/d1qbp22xe/Portfolio-pics/1%20f%20render%20off_2%20-%20Photo.webp?tr=w-500"
+                      class="glightbox d-none"
+                      data-gallery="gallery-office"
+                      title="Manager Office View 2"></a>
+
+                    <a href="https://ik.imagekit.io/d1qbp22xe/Portfolio-pics/1%20f%20render%20off_3%20-%20Photo.webp??tr=w-500"
+                      class="glightbox d-none"
+                      data-gallery="gallery-office"
+                      title="Manager Office View 3"></a>
+
+                    <a href="project_6.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video portfolio-card" style="display: block;">
+              <div class="portfolio-content h-100">
+                <!-- Video Container with Custom Thumbnail System -->
+                <div class="portfolio-video-container" 
+                    data-video-id="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/final%20for%20upload%20youtube%20office%20short%20video.mp4?updatedAt=1751538937143"
+                    data-custom-thumbnail="https://ik.imagekit.io/d1qbp22xe/Portfolio-pics/1%20f%20render%20off_1%20-%20Photo.webp?updatedAt=1751223486173">
+                  
+                  <!-- Custom Thumbnail (always shown first) -->
+                  <img src="https://ik.imagekit.io/d1qbp22xe/Portfolio-pics/1%20f%20render%20off_1%20-%20Photo.webp?updatedAt=1751223486173" 
+                      alt="Project video preview" 
+                      class="video-thumbnail img-fluid"
+                      loading="lazy">
+                  
+                  <!-- Play button overlay -->
+                  <div class="video-play-overlay">
+                    <div class="play-button">
+                      <i style="margin-right:110px;" class="bi bi-play-circle-fill"></i>
+                    </div>
+                  </div>      
+                
+                  <!-- Video element container -->
+                  <div class="video-element-wrapper">
+                    <video controls style="display:none; width:100%;">
+                      <source src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/final%20for%20upload%20youtube%20office%20short%20video.mp4?updatedAt=1751538937143" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+                
+                <!-- Portfolio Info -->
+                <div class="portfolio-info">
+                  <h4>Manager Office Animation</h4>
+                  <p>3D animation walkthrough</p>
+                  <div class="portfolio-links">
+                    <a style="margin-left:40px; margin-top:7px;" href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/final%20for%20upload%20youtube%20office%20short%20video.mp4?updatedAt=1751538937143" 
+                      title="Watch Video" 
+                      class="glightbox preview-link">
+                      <div class="video-play-overlay">
+                          <div class="play-button">
+                            <i class="bi bi-play-circle-fill"></i>
+                          </div>
+                        </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+            <!--Line 4-->
+                <!-- Residential Planning -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-commercial portfolio-card" style="display: none;">
+              <div class="portfolio-content h-100">
+                <div class="image-collage-fixed">
+                  <div class="top-image">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/AL-SULTAN%20CORPORATE%20OFFICE%20DESIGN%20DUBAI/hallwayv1.jpg?updatedAt=1751442787776" loading="lazy" class="img-fluid" alt="Modern Commercial Design">
+                  </div>
+                  <div class="bottom-images">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/AL-SULTAN%20CORPORATE%20OFFICE%20DESIGN%20DUBAI/reception.jpg?updatedAt=1751442787878" alt="Sub1" loading="lazy" class="img-fluid small-img">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/AL-SULTAN%20CORPORATE%20OFFICE%20DESIGN%20DUBAI/receptionren_89-Photo.jpg?updatedAt=1751442787942" loading="lazy" alt="Sub2" class="img-fluid small-img">
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Dubai Office</h4>
+                  <p>Dubai office with all luxuries.</p>
+
+                  <!-- Lightbox trigger -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/AL-SULTAN%20CORPORATE%20OFFICE%20DESIGN%20DUBAI/hallwayv1.jpg?updatedAt=1751442787776"
+                    title="Dubai Office - Hallway"
+                    data-gallery="gallery-dubai-office"
+                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                  <!-- Hidden images -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/AL-SULTAN%20CORPORATE%20OFFICE%20DESIGN%20DUBAI/reception.jpg?updatedAt=1751442787878"
+                    class="glightbox d-none"
+                    data-gallery="gallery-dubai-office"
+                    title="Dubai Office - Reception"></a>
+
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/AL-SULTAN%20CORPORATE%20OFFICE%20DESIGN%20DUBAI/receptionren_89-Photo.jpg?updatedAt=1751442787942"
+                    class="glightbox d-none"
+                    data-gallery="gallery-dubai-office"
+                    title="Dubai Office - Perspective View"></a>
+
+                  <a href="project_7.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-residential portfolio-card" style="display: none;">
+            <div class="portfolio-content h-100">
+              <div class="image-row">
+                <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/game%20room/verticalrendrsgaming_4-Photo.jpg?updatedAt=1751398022982" loading="lazy" class="img-fluid" alt="Modern Bath Design">
+                <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/game%20room/verticalrendrsgaming_3-Photo.jpg?updatedAt=1751398022721" loading="lazy" alt="Sub1" class="img-fluid">
+                <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/game%20room/verticalrendrsgaming_8-Photo.jpg?updatedAt=1751398029868" loading="lazy" alt="Sub2" class="img-fluid">
+              </div>
+              <div class="portfolio-info">
+                <h4>Gaming Room</h4>
+                <p>Elegant Gaming room design.</p>
+
+                <!-- Lightbox trigger -->
+                <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/game%20room/verticalrendrsgaming_4-Photo.jpg?updatedAt=1751398022982"
+                  title="Gaming Room - Main"
+                  data-gallery="gallery-gaming-room"
+                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                <!-- Hidden images -->
+                <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/game%20room/verticalrendrsgaming_3-Photo.jpg?updatedAt=1751398022721"
+                  class="glightbox d-none"
+                  data-gallery="gallery-gaming-room"
+                  title="Gaming Room - Setup View"></a>
+
+                <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/game%20room/verticalrendrsgaming_8-Photo.jpg?updatedAt=1751398029868"
+                  class="glightbox d-none"
+                  data-gallery="gallery-gaming-room"
+                  title="Gaming Room - Backdrop"></a>
+
+                <a href="project_8.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video portfolio-card" style="display: none;">
+              <div class="portfolio-content h-100">
+                <!-- Video Container with Custom Thumbnail System -->
+                <div class="portfolio-video-container" 
+                    data-video-id="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/final%20gameroom%20short.mp4?updatedAt=1751537332564"
+                    data-custom-thumbnail="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/game%20room/verticalrendrsgaming_4-Photo.jpg?updatedAt=1751398022982">
+                  
+                  <!-- Custom Thumbnail (always shown first) -->
+                  <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/game%20room/verticalrendrsgaming_4-Photo.jpg?updatedAt=1751398022982" 
+                      alt="Project video preview" 
+                      class="video-thumbnail img-fluid"
+                      loading="lazy">
+                  
+                  <!-- Play button overlay -->
+                  <div class="video-play-overlay">
+                    <div class="play-button">
+                      <i style="margin-right:110px;" class="bi bi-play-circle-fill"></i>
+                    </div>
+                  </div>      
+                
+                  <!-- Video element container -->
+                  <div class="video-element-wrapper">
+                    <video controls style="display:none; width:100%;">
+                      <source src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/final%20gameroom%20short.mp4?updatedAt=1751537332564" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+                
+                <!-- Portfolio Info -->
+                <div class="portfolio-info">
+                  <h4>Project Video</h4>
+                  <p>3D animation walkthrough</p>
+                  <div class="portfolio-links">
+                    <a style="margin-left:40px; margin-top:7px;" href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/final%20gameroom%20short.mp4?updatedAt=1751537332564" 
+                      title="Watch Video" 
+                      class="glightbox preview-link">
+                      <div class="video-play-overlay">
+                          <div class="play-button">
+                            <i class="bi bi-play-circle-fill"></i>
+                          </div>
+                        </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+         
+             <!--Line 5-->
+            
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-residential portfolio-card" style="display: none;">
+              <div class="portfolio-content h-100">
+                <div class="image-collage-fixed">
+                  <div class="top-image">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/bath/bterenders_71-Photo.jpg?updatedAt=1751398029939" loading="lazy" class="img-fluid" alt="Modern Commercial Design">
+                  </div>
+                  <div class="bottom-images">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/bath/bathfinal360.jpg?updatedAt=1751398029957" loading="lazy" alt="Sub2" class="img-fluid small-img">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/bath/Screenshot2025-07-0120033.jpeg?updatedAt=1751398029539" loading="lazy" alt="Sub1" class="img-fluid small-img">
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Bath</h4>
+                  <p>Modern Design Bath.</p>
+
+                  <!-- Lightbox Main Image -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/bath/bterenders_71-Photo.jpg?updatedAt=1751398029939"
+                    title="Bath Main"
+                    data-gallery="gallery-bath"
+                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                  <!-- Hidden Lightbox Images -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/bath/bathfinal360.jpg?updatedAt=1751398029957"
+                    class="glightbox d-none"
+                    data-gallery="gallery-bath"
+                    title="Bath 360 View"></a>
+
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/bath/Screenshot2025-07-0120033.jpeg?updatedAt=1751398029539"
+                    class="glightbox d-none"
+                    data-gallery="gallery-bath"
+                    title="Bath Screenshot"></a>
+
+                  <a href="project_9.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+            
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-commercial portfolio-card" style="display: none;">
+            <div class="portfolio-content h-100">
+              <div class="image-row">
+                <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Theatre/bbbbb_92-Photo.jpg?updatedAt=1751442786276" loading="lazy" class="img-fluid" alt="Modern Bath Design">
+                <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Theatre/newfinal1_93-Photo.jpg?updatedAt=1751442787788" loading="lazy" alt="Sub1" class="img-fluid">
+                <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Theatre/bbbbb_91-Photo.jpg?updatedAt=1751442787756" loading="lazy" alt="Sub2" class="img-fluid">
+              </div>
+              <div class="portfolio-info">
+                <h4>Theatre</h4>
+                <p>Modern Design Theatre</p>
+
+                <!-- Lightbox Main Image -->
+                <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Theatre/bbbbb_92-Photo.jpg?updatedAt=1751442786276"
+                  title="Theatre View"
+                  data-gallery="gallery-theatre"
+                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                <!-- Hidden Lightbox Images -->
+                <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Theatre/newfinal1_93-Photo.jpg?updatedAt=1751442787788"
+                  class="glightbox d-none"
+                  data-gallery="gallery-theatre"
+                  title="Theatre New Final View"></a>
+
+                <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Theatre/bbbbb_91-Photo.jpg?updatedAt=1751442787756"
+                  class="glightbox d-none"
+                  data-gallery="gallery-theatre"
+                  title="Theatre Back View"></a>
+
+                <a href="project_10.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>  
+            </div>
+          </div>
+
+
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video portfolio-card" style="display: none;">
+              <div class="portfolio-content h-100">
+                <!-- Video Container with Custom Thumbnail System -->
+                <div class="portfolio-video-container" 
+                    data-video-id="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/theatre%20.mp4?updatedAt=1751537314442"
+                    data-custom-thumbnail="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Theatre/bbbbb_92-Photo.jpg?updatedAt=1751442786276">
+                  
+                  <!-- Custom Thumbnail (always shown first) -->
+                  <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Theatre/bbbbb_92-Photo.jpg?updatedAt=1751442786276" 
+                      alt="Project video preview" 
+                      class="video-thumbnail img-fluid"
+                      loading="lazy">
+                  
+                  <!-- Play button overlay -->
+                  <div class="video-play-overlay">
+                    <div class="play-button">
+                      <i style="margin-right:110px;" class="bi bi-play-circle-fill"></i>
+                    </div>
+                  </div>      
+                
+                  <!-- Video element container -->
+                  <div class="video-element-wrapper">
+                    <video controls style="display:none; width:100%;">
+                      <source src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/theatre%20.mp4?updatedAt=1751537314442" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+                
+                <!-- Portfolio Info -->
+                <div class="portfolio-info">
+                  <h4>Project Video</h4>
+                  <p>3D animation walkthrough</p>
+                  <div class="portfolio-links">
+                    <a style="margin-left:40px; margin-top:7px;" href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/theatre%20.mp4?updatedAt=1751537314442" 
+                      title="Watch Video" 
+                      class="glightbox preview-link">
+                      <div class="video-play-overlay">
+                          <div class="play-button">
+                            <i class="bi bi-play-circle-fill"></i>
+                          </div>
+                        </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        <!--Line 6-->
+
+        
+         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-commercial portfolio-card" style="display: none;">
+          <div class="portfolio-content h-100">
+            <div class="image-collage-fixed">
+              <div class="top-image">
+                <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Executive%20Office/renderfory_63-Photo.jpg?updatedAt=1751442768154" loading="lazy" class="img-fluid" alt="Executive Office Main View">
+              </div>
+              <div class="bottom-images">
+                <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Executive%20Office/renderfory_64-Photo.jpg?updatedAt=1751442768402" loading="lazy" alt="Executive Office Side View" class="img-fluid small-img">
+                <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Executive%20Office/Screenshot2025-07-0120422.jpeg?updatedAt=1751442768590" loading="lazy" alt="Executive Office Perspective" class="img-fluid small-img">
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h4>Executive Office</h4>
+              <p>Executive Office.</p>
+
+              <!-- Lightbox Trigger -->
+              <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Executive%20Office/renderfory_63-Photo.jpg?updatedAt=1751442768154"
+                title="Executive Office Main View"
+                data-gallery="gallery-executive-office"
+                class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+              <!-- Hidden Images for Lightbox -->
+              <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Executive%20Office/renderfory_64-Photo.jpg?updatedAt=1751442768402"
+                class="glightbox d-none"
+                data-gallery="gallery-executive-office"
+                title="Executive Office Side View"></a>
+
+              <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Executive%20Office/Screenshot2025-07-0120422.jpeg?updatedAt=1751442768590"
+                class="glightbox d-none"
+                data-gallery="gallery-executive-office"
+                title="Executive Office Perspective View"></a>
+
+              <a href="project_11.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+       
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-commercial portfolio-card" style="display: none;">
+            <div class="portfolio-content h-100">
+              <div class="image-collage-fixed">
+                <div class="top-image">
+                  <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/clinic/clinicviews_21-Photo.jpg?updatedAt=1751442763913" loading="lazy" class="img-fluid" alt="Clinic Main View">
+                </div>
+                <div class="bottom-images">
+                  <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/clinic/firstfloorviews_41-Photo.jpg?updatedAt=1751442768447" loading="lazy" alt="Clinic First Floor" class="img-fluid small-img">
+                  <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/clinic/CLINICVIEWOP3.jpg?updatedAt=1751442768418" loading="lazy" alt="Clinic OP View" class="img-fluid small-img">
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <h4>Clinic</h4>
+                <p>Modern Design clinic.</p>
+
+                <!-- Lightbox Trigger -->
+                <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/clinic/clinicviews_21-Photo.jpg?updatedAt=1751442763913"
+                  title="Clinic Main View"
+                  data-gallery="gallery-clinic"
+                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                <!-- Hidden Images for Lightbox -->
+                <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/clinic/firstfloorviews_41-Photo.jpg?updatedAt=1751442768447"
+                  class="glightbox d-none"
+                  data-gallery="gallery-clinic"
+                  title="Clinic First Floor View"></a>
+
+                <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/clinic/CLINICVIEWOP3.jpg?updatedAt=1751442768418"
+                  class="glightbox d-none"
+                  data-gallery="gallery-clinic"
+                  title="Clinic OP View"></a>
+
+                <a href="project_12.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+
+
+            
+        
+             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video portfolio-card " style="display: none;">
+              <div  class="portfolio-content h-100">
+                <!-- Video Container with Custom Thumbnail System -->
+                <div class="portfolio-video-container" 
+                    data-video-id="https://www.youtube.com/watch?v=wof44oH40iI"
+                    data-custom-thumbnail="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Executive%20Office/renderfory_63-Photo.jpg?updatedAt=1751442768154">
+                  
+                  <!-- Custom Thumbnail (always shown first) -->
+                  <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Executive%20Office/renderfory_63-Photo.jpg?updatedAt=1751442768154" 
+                      alt="Project video preview" 
+                      class="video-thumbnail img-fluid"
+                      loading="lazy">
+                  
+                  <!-- Play button overlay -->
+                  <div class="video-play-overlay">
+                    <div class="play-button">
+                      <i style="margin-right:110px;" class="bi bi-play-circle-fill"></i>
+                    </div>
+                  </div>      
+                
+                  
+                  <!-- Iframe container -->
+                  <div class="video-iframe-wrapper"></div>
+                </div>
+                
+                <!-- Portfolio Info -->
+                <div class="portfolio-info">
+                  <h4>Project Video</h4>
+                  <p>3D animation walkthrough</p>
+                  <div class="portfolio-links ">
+                    <a style="margin-left:40px; margin-top:7px;" href="https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=wof44oH40iI" 
+                      title="Watch Video" 
+                      class="glightbox preview-link">
+                      <div class="video-play-overlay">
+                          <div class="play-button">
+                            <i class="bi bi-play-circle-fill"></i>
+                          </div>
+                        </div>
+                    </a>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Line 7-->
+
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-commercial portfolio-card" style="display: none;">
+                <div class="portfolio-content h-100">
+                  <div class="image-row">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/BED/vrenders_43-Photo.jpg?updatedAt=1751398029695" loading="lazy" class="img-fluid" alt="Luxury Bed Room Main">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/BED/vrenders_45-Photo.jpg?updatedAt=1751398029890" loading="lazy" alt="Bed Room Side" class="img-fluid">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/BED/vrenders_41-Photo.jpg?updatedAt=1751398029924" loading="lazy" alt="Bed Room Alt" class="img-fluid">
+                  </div>
+                  <div class="portfolio-info">
+                    <h4>Bed Room</h4>
+                    <p>Luxury Bed Room.</p>
+
+                    <!-- Lightbox Trigger -->
+                    <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/BED/vrenders_43-Photo.jpg?updatedAt=1751398029695"
+                      title="Luxury Bed Room Main"
+                      data-gallery="gallery-bedroom"
+                      class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                    <!-- Hidden Images for Lightbox -->
+                    <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/BED/vrenders_45-Photo.jpg?updatedAt=1751398029890"
+                      class="glightbox d-none"
+                      data-gallery="gallery-bedroom"
+                      title="Bed Room Side"></a>
+                    <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/BED/vrenders_41-Photo.jpg?updatedAt=1751398029924"
+                      class="glightbox d-none"
+                      data-gallery="gallery-bedroom"
+                      title="Bed Room Alternative View"></a>
+
+                    <a href="project_14.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+              </div>
+
+            
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-commercial portfolio-card" style="display: none;">
+              <div class="portfolio-content h-100">
+                <div class="image-row">
+                  <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Neo%20Classical%20house%20Facade/ttttrender_40-Photo.jpg?updatedAt=1751451688580" loading="lazy" class="img-fluid" alt="Classical Facade Main">
+                  <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Neo%20Classical%20house%20Facade/ttttrender_37-Photo111.jpg?updatedAt=1751451688204" loading="lazy" alt="Facade Side" class="img-fluid">
+                  <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Neo%20Classical%20house%20Facade/ttttrender_39-Photo.jpg?updatedAt=1751451688376" loading="lazy" alt="Facade Alternate" class="img-fluid">
+                </div>
+                <div class="portfolio-info">
+                  <h4>Classical house facade</h4>
+                  <p>Classical house facade.</p>
+
+                  <!-- Lightbox Trigger -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Neo%20Classical%20house%20Facade/ttttrender_40-Photo.jpg?updatedAt=1751451688580"
+                    title="Classical Facade Main"
+                    data-gallery="gallery-classical-facade"
+                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                  <!-- Hidden Images for Lightbox -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Neo%20Classical%20house%20Facade/ttttrender_37-Photo111.jpg?updatedAt=1751451688204"
+                    class="glightbox d-none"
+                    data-gallery="gallery-classical-facade"
+                    title="Facade Side View"></a>
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Neo%20Classical%20house%20Facade/ttttrender_39-Photo.jpg?updatedAt=1751451688376"
+                    class="glightbox d-none"
+                    data-gallery="gallery-classical-facade"
+                    title="Facade Alternate View"></a>
+
+                  <a href="project_13.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+            
+
+           
+        
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video portfolio-card" style="display: none;">
+              <div class="portfolio-content h-100">
+                <!-- Video Container with Custom Thumbnail System -->
+                <div class="portfolio-video-container" 
+                    data-video-id="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/vbedroom.mp4?updatedAt=1751537366177"
+                    data-custom-thumbnail="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/BED/vrenders_43-Photo.jpg?updatedAt=1751398029695">
+                  
+                  <!-- Custom Thumbnail (always shown first) -->
+                  <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/BED/vrenders_43-Photo.jpg?updatedAt=1751398029695" 
+                      alt="Project video preview" 
+                      class="video-thumbnail img-fluid"
+                      loading="lazy">
+                  
+                  <!-- Play button overlay -->
+                  <div class="video-play-overlay">
+                    <div class="play-button">
+                      <i style="margin-right:110px;" class="bi bi-play-circle-fill"></i>
+                    </div>
+                  </div>      
+                
+                  <!-- Video element container -->
+                  <div class="video-element-wrapper">
+                    <video controls style="display:none; width:100%;">
+                      <source src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/vbedroom.mp4?updatedAt=1751537366177" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+                
+                <!-- Portfolio Info -->
+                <div class="portfolio-info">
+                  <h4>Project Video</h4>
+                  <p>3D animation walkthrough</p>
+                  <div class="portfolio-links">
+                    <a style="margin-left:40px; margin-top:7px;" href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/vbedroom.mp4?updatedAt=1751537366177" 
+                      title="Watch Video" 
+                      class="glightbox preview-link">
+                      <div class="video-play-overlay">
+                          <div class="play-button">
+                            <i class="bi bi-play-circle-fill"></i>
+                          </div>
+                        </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Line 8-->
+           
+
+          
+
+             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-commercial portfolio-card" style="display: none;">
+                <div class="portfolio-content h-100">
+                  <div class="image-collage-fixed">
+                    <div class="top-image">
+                      <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Cottage/z.jpg?updatedAt=1751398247699" loading="lazy" class="img-fluid" alt="Modern Commercial Design">
+                    </div>
+                    <div class="bottom-images">
+                      <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Cottage/y.jpg?updatedAt=1751398245282" loading="lazy" alt="Sub2" class="img-fluid small-img">
+                      <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Cottage/n.jpg?updatedAt=1751398238313" loading="lazy" alt="Sub1" class="img-fluid small-img">
+                    </div>
+                  </div>
+                  <div class="portfolio-info">
+                    <h4>Cottage</h4>
+                    <p>Cottage.</p>
+
+                    <!-- Main preview image trigger -->
+                    <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Cottage/z.jpg?updatedAt=1751398247699"
+                      title="Cottage - Main"
+                      data-gallery="gallery-cottage"
+                      class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                    </a>
+
+                    <!-- Hidden images added to same gallery -->
+                    <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Cottage/y.jpg?updatedAt=1751398245282"
+                      class="glightbox d-none"
+                      data-gallery="gallery-cottage"
+                      title="Cottage - Side View 1"></a>
+
+                    <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Cottage/n.jpg?updatedAt=1751398238313"
+                      class="glightbox d-none"
+                      data-gallery="gallery-cottage"
+                      title="Cottage - Side View 2"></a>
+
+                    <!-- Details link -->
+                    <a href="project_16.html" title="More Details" class="details-link">
+                      <i class="bi bi-link-45deg"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+                        
+           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-interior filter-commercial portfolio-card" style="display: none;">
+              <div class="portfolio-content h-100">
+                <div class="image-collage-fixed">
+                  <div class="top-image">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Container%20office/SITEVIEWS.jpg?updatedAt=1751452262846"
+                        loading="lazy"
+                        class="img-fluid"
+                        alt="Container Office Main">
+                  </div>
+                  <div class="bottom-images">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Container%20office/SITEVIEWS5.jpg?updatedAt=1751452262170"
+                        loading="lazy"
+                        alt="Container Office Angle"
+                        class="img-fluid small-img">
+                    <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Container%20office/SITEVIEWS6.jpg?updatedAt=1751452262232"
+                        loading="lazy"
+                        alt="Container Office Side"
+                        class="img-fluid small-img">
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Container Office</h4>
+                  <p>Container Office.</p>
+
+                  <!-- Main Lightbox Trigger -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Container%20office/SITEVIEWS.jpg?updatedAt=1751452262846"
+                    title="Container Office Main"
+                    data-gallery="gallery-container-office"
+                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+                  <!-- Hidden Images for Lightbox Group -->
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Container%20office/SITEVIEWS5.jpg?updatedAt=1751452262170"
+                    class="glightbox d-none"
+                    data-gallery="gallery-container-office"
+                    title="Container Office Angle"></a>
+                  <a href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Container%20office/SITEVIEWS6.jpg?updatedAt=1751452262232"
+                    class="glightbox d-none"
+                    data-gallery="gallery-container-office"
+                    title="Container Office Side View"></a>
+
+                  <a href="project_15.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video portfolio-card" style="display: none;">
+              <div class="portfolio-content h-100">
+                <!-- Video Container with Custom Thumbnail System -->
+                <div class="portfolio-video-container" 
+                    data-video-id="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/cottagee.mp4?updatedAt=1751537365371"
+                    data-custom-thumbnail="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Cottage/z.jpg?updatedAt=1751398247699">
+                  
+                  <!-- Custom Thumbnail (always shown first) -->
+                  <img src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/Cottage/z.jpg?updatedAt=1751398247699" 
+                      alt="Project video preview" 
+                      class="video-thumbnail img-fluid"
+                      loading="lazy">
+                  
+                  <!-- Play button overlay -->
+                  <div class="video-play-overlay">
+                    <div class="play-button">
+                      <i style="margin-right:110px;" class="bi bi-play-circle-fill"></i>
+                    </div>
+                  </div>      
+                
+                  <!-- Video element container -->
+                  <div class="video-element-wrapper">
+                    <video controls style="display:none; width:100%;">
+                      <source src="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/cottagee.mp4?updatedAt=1751537365371" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+                
+                <!-- Portfolio Info -->
+                <div class="portfolio-info">
+                  <h4>Project Video</h4>
+                  <p>3D animation walkthrough</p>
+                  <div class="portfolio-links">
+                    <a style="margin-left:40px; margin-top:7px;" href="https://ik.imagekit.io/d1qbp22xe/New%20Small%20portfolio%20pics/animation/cottagee.mp4?updatedAt=1751537365371" 
+                      title="Watch Video" 
+                      class="glightbox preview-link">
+                      <div class="video-play-overlay">
+                          <div class="play-button">
+                            <i class="bi bi-play-circle-fill"></i>
+                          </div>
+                        </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+          </div>
+          <div class="text-center mt-4">
+            <button id="loadMoreBtn" class="btn btn-primary">Load More Projects</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>I offer a range of architectural and design services, combining creativity with technical proficiency. From concept development to final visualization, I help bring your ideas to life with precision and professionalism.</p>
+      </div><!-- End Section Title -->
+    
+      <div class="container">
+        <div class="row gy-4">
+    
+          
+    
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-vector-pen"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">2D Drafting</a></h4>
+              <p class="description">Professional 2D architectural plans, elevations, and sections prepared using industry-standard CAD software.</p>
+            </div>
+          </div><!-- End Service Item -->
+    
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-building"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">3D Modeling</a></h4>
+              <p class="description">Accurate and detailed 3D models for concept visualization, design development, and presentations.</p>
+            </div>
+          </div><!-- End Service Item -->
+    
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon flex-shrink-0"><i class="bi bi-camera-reels"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">3D Rendering</a></h4>
+              <p class="description">Photorealistic renderings and visualizations to bring your project to life and impress stakeholders or clients.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-house-door"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Architectural Design</a></h4>
+              <p class="description">Customized architectural designs for residential, commercial, and mixed-use buildings, focusing on aesthetics and functionality.</p>
+            </div>
+          </div><!-- End Service Item -->
+    
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon flex-shrink-0"><i class="bi bi-pencil-square"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Interior Design Support</a></h4>
+              <p class="description">Assistance with space planning, interior detailing, material selection, and layout optimization.</p>
+            </div>
+          </div><!-- End Service Item -->
+    
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon flex-shrink-0"><i class="bi bi-play-circle"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Video Editing </a></h4>
+              <p class="description">Editing promotional videos, client showcases, and visual walkthroughs using Wondershare Filmora.</p>
+
+            </div>
+          </div><!-- End Service Item -->
+    
+        </div>
+      </div>
+    </section><!-- /Services Section -->
+    
+
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>If you're looking to collaborate on architectural or MEP design projects, or wish to discuss opportunities, feel free to get in touch. I'm open to freelance and full-time roles, especially during my final internship year.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-5">
+
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>Adams Housing Multan , Punjab , Pakistan</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Me</h3>
+                  <p>+92 307 6834873</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Me</h3>
+                  <p>sdaalone@gmail.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13609.147474518406!2d71.5495867!3d30.231766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b351fa4b1fde5%3A0xf042a4a959750446!2sAdams%20Housing%20Multan%20(Official)!5e0!3m2!1sen!2s!4v1719573747000!5m2!1sen!2s" 
+              frameborder="0" 
+              style="border:0; width: 100%; height: 270px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form action="https://formspree.io/f/xnnvydzj" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+            
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">Your Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required>
+                </div>
+            
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required>
+                </div>
+            
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required>
+                </div>
+            
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
+                </div>
+            
+            
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+            
+            
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative ">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">isvisualart</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://www.linkedin.com/in/zahid-naseer-400baa249/" target="_blank">Zahid Naseer </a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    const form = document.querySelector('.php-email-form');
+  
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+  
+      const formData = new FormData(form);
+  
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+  
+        const data = await response.json();
+  
+        if (response.ok) {
+          // Show success message, redirect, or do whatever you want here
+          alert('Your message has been sent successfully!');
+          form.reset();
+          // Optionally redirect manually:
+          // window.location.href = "https://formspree.io/success";
+        } else {
+          // If the response is NOT ok, handle errors from Formspree
+          alert('Oops! There was a problem: ' + (data.error || JSON.stringify(data)));
+        }
+      } catch (error) {
+        alert('Error submitting the form: ' + error.message);
+      }
+    });
+  </script>
+    <!-- Services Section -->
+    
+
+    <!-- Leaflet.js Map Integration -->
+   
+    
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+     
+    </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Initialize Isotope with proper settings
+  const iso = new Isotope('.isotope-container', {
+    itemSelector: '.portfolio-item',
+    layoutMode: 'masonry',
+    percentPosition: true,
+    transitionDuration: 0,
+    stagger: 30,
+    resize: true,
+    initLayout: true
+  });
+
+  // Load More functionality with proper layout handling
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  const hiddenItems = Array.from(document.querySelectorAll('.portfolio-item[style*="display: none"]'));
+  let itemsPerLoad = 6;
+  let currentIndex = 0;
+
+  loadMoreBtn.addEventListener('click', function() {
+    // Show next batch of items
+    const nextItems = hiddenItems.slice(currentIndex, currentIndex + itemsPerLoad);
+    
+    nextItems.forEach(item => {
+      item.style.display = 'block';
+      
+      // Force reflow to ensure proper measurement
+      void item.offsetHeight;
+    });
+
+    currentIndex += itemsPerLoad;
+
+    // Properly refresh Isotope layout
+    setTimeout(() => {
+      // First reload all items
+      iso.reloadItems();
+      
+      // Then arrange them
+      iso.arrange({
+        filter: '*',
+        sortBy: 'original-order',
+        masonry: {
+          columnWidth: '.portfolio-item'
+        }
+      });
+      
+      // Finally, layout with imagesLoaded
+      imagesLoaded('.isotope-container').on('progress', function() {
+        iso.layout();
+      });
+    }, 50);
+
+    // Hide button if no more items
+    if (currentIndex >= hiddenItems.length) {
+      loadMoreBtn.style.display = 'none';
+    }
+  });
+
+  // Add window resize listener to force layout
+  window.addEventListener('resize', function() {
+    iso.layout();
+  });
+});
+</script>
+
+<script>
+// SIMPLE RELIABLE INITIALIZATION
+document.addEventListener('DOMContentLoaded', function() {
+  // Video click handler
+  document.querySelectorAll('.portfolio-video-container').forEach(container => {
+    container.addEventListener('click', function(e) {
+      if (e.target.closest('a')) return;
+      
+      const videoId = this.dataset.videoId;
+      const iframeWrapper = this.querySelector('.video-iframe-wrapper');
+      
+      if (!iframeWrapper.innerHTML) {
+        iframeWrapper.innerHTML = `
+          <iframe 
+            width="100%" 
+            height="100%" 
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
+            frameborder="0" 
+            allowfullscreen>
+          </iframe>`;
+      }
+      
+      this.querySelector('.video-thumbnail').style.display = 'none';
+      this.querySelector('.video-play-overlay').style.display = 'none';
+      iframeWrapper.style.display = 'block';
+    });
+  });
+});
+</script>
+    
 </body>
+
 </html>
